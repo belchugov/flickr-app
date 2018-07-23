@@ -1,0 +1,24 @@
+{
+  "name": "flickr-app",
+  "version": "1.0.0",
+  "description": "Web development Flickr Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belchugov/flickr-app.git"
+  },
+  "keywords": [
+    "javascript",
+    "angularjs",
+    "bootstrap"
+  ],
+  "author": "Dimitar Belchugov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/belchugov/flickr-app/issues"
+  },
+  "homepage": "https://github.com/belchugov/flickr-app#readme"
+}
