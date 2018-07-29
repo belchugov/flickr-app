@@ -5,25 +5,31 @@
         .module('flickr-app')
         .component('imageList', {
             template:
-                '<ul>' +
-                    '<li ng-repeat="image in $ctrl.images">' +
-                        '<span>{{ image.name }}</span>' +
-                        '<p>{{ image.snippet }}</p>' +
-                    '</li>' +
-                '</ul>',
-            controller: function PhoneListController() {
-                this.images = [
-                    {
-                        name: 'Nexus S',
-                        snippet: 'Fast just got faster with Nexus S.'
-                    }, {
-                        name: 'Motorola XOOM™ with Wi-Fi',
-                        snippet: 'The Next, Next Generation tablet.'
-                    }, {
-                        name: 'MOTOROLA XOOM™',
-                        snippet: 'The Next, Next Generation tablet.'
-                    }
-                ];
+                '<div class="row">\n' +
+                '  <div class="col-sm-4" ng-repeat="photo in $ctrl.photos">\n' +
+                '    <div class="card">\n' +
+                '      <div class="card-body">\n' +
+                '        <h5 class="card-title">{{ photo.title }}</h5>\n' +
+                '        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>\n' +
+                '        <a href="#" class="btn btn-primary">Go somewhere</a>\n' +
+                '      </div>\n' +
+                '    </div>\n' +
+                '  </div>\n' +
+                '</div>',
+            controller: function ImageListController(FlickrService) {
+                var _this = this;
+
+                this.$onInit = function () {
+                    getImagesBySearch();
+                };
+
+                function getImagesBySearch() {
+                    return FlickrService.getImagesBySearch().then(function (response) {
+                        _this.photos = response.data.photos.photo;
+                    }).catch(function(error) {
+                        console.log(error);
+                    });
+                }
             }
         });
 })();
