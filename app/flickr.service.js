@@ -20,7 +20,7 @@
                 .then(function (response) {
                     return response;
                 }).catch(function(error) {
-                    console.log(error);
+                    console.error(error);
                 });
         }
 
@@ -36,10 +36,9 @@
                     nojsoncallback: 1
                 }
             }).then(function (response) {
-                console.log(response);
                 return response;
             }).catch(function(error) {
-                console.log(error);
+                console.error(error);
             });
         }
     }
