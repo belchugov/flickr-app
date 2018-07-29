@@ -4,18 +4,7 @@
     angular
         .module('flickr-app')
         .component('imageList', {
-            template:
-                '<div class="row">\n' +
-                '  <div class="col-sm-4" ng-repeat="photo in $ctrl.photos">\n' +
-                '    <div class="card">\n' +
-                '      <div class="card-body">\n' +
-                '        <h5 class="card-title">{{ photo.title }}</h5>\n' +
-                '        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>\n' +
-                '        <a href="#" class="btn btn-primary">Go somewhere</a>\n' +
-                '      </div>\n' +
-                '    </div>\n' +
-                '  </div>\n' +
-                '</div>',
+            templateUrl: './app/image-list.html',
             controller: function ImageListController(FlickrService) {
                 var _this = this;
 
