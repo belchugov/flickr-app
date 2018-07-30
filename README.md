@@ -1,6 +1,7 @@
 # flickr-app
 Web development Flickr Task
-## Installation 
+## Running 
 ```sh
 $ npm install
+$ npm start
 ```
