@@ -24,14 +24,14 @@
                 });
         }
 
-        function getImagesBySearch() {
+        function getImagesBySearch(searchTerm) {
             return $http({
                 method: 'GET',
                 url: 'https://api.flickr.com/services/rest',
                 params: {
                     method: 'flickr.photos.search',
                     api_key: 'ca4197b9386a9cc6d5ff7dc9e5bc25b6',
-                    text: 'cars',
+                    text: searchTerm,
                     format: 'json',
                     nojsoncallback: 1
                 }
