@@ -33,7 +33,8 @@
                     api_key: 'ca4197b9386a9cc6d5ff7dc9e5bc25b6',
                     text: searchTerm,
                     format: 'json',
-                    nojsoncallback: 1
+                    nojsoncallback: 1,
+                    safe_search: 3
                 }
             }).then(function (response) {
                 return response;
