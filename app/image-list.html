@@ -14,17 +14,20 @@
 </div>
 <div class="row">
     <div class="col-sm-3" ng-repeat="photo in $ctrl.photos">
-        <div class="card">
-            <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_m.jpg"
+        <div class="card flickr-card">
+            <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_n.jpg"
                  alt="{{ photo.title }}"
                  class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-title text-truncate">
                     <a href="https://www.flickr.com/photos/{{ photo.owner }}/{{photo.id}}/">
                         {{photo.title}}
                     </a>
                 </h5>
-                <p>by <a href="">{{photo.owner}}</a></p>
+                <p>
+                    Author flickr
+                    <a href="https://www.flickr.com/people/{{ photo.owner }}">page</a>
+                </p>
             </div>
         </div>
     </div>

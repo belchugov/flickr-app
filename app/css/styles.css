@@ -1,0 +1,8 @@
+.flickr-card {
+    margin-bottom: 20px;
+}
+
+.flickr-card .card-img-top {
+    height: 240px;
+    object-fit: cover;
+}

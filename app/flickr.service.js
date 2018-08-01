@@ -9,20 +9,9 @@
 
     /* @ngInject */
     function FlickrService($http) {
-        this.getImages = getImages;
         this.getImagesBySearch = getImagesBySearch;
 
         ////////////////
-
-        function getImages() {
-            var url = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1';
-            return $http.jsonp(url, {jsonpCallbackParam: 'callback'})
-                .then(function (response) {
-                    return response;
-                }).catch(function(error) {
-                    console.error(error);
-                });
-        }
 
         function getImagesBySearch(searchTerm) {
             return $http({
@@ -34,7 +23,8 @@
                     text: searchTerm,
                     format: 'json',
                     nojsoncallback: 1,
-                    safe_search: 3
+                    safe_search: 3,
+                    per_page: '12'
                 }
             }).then(function (response) {
                 return response;
