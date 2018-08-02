@@ -12,6 +12,15 @@
         </form>
     </div>
 </div>
+
+<div class="row" ng-if="$ctrl.photos.length === 0">
+    <div class="col-sm-12">
+        <div class="alert alert-warning text-center" role="alert">
+            No results found.
+        </div>
+    </div>
+</div>
+
 <div class="row"
      infinite-scroll="$ctrl.nextPage()"
      infinite-scroll-disabled="$ctrl.busy"
@@ -36,3 +45,10 @@
     </div>
 </div>
 
+<div class="row" ng-if="$ctrl.busy">
+    <div class="col-sm-12">
+        <div class="alert alert-primary text-center" role="alert">
+            Loading...
+        </div>
+    </div>
+</div>
