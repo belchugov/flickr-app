@@ -9,11 +9,11 @@
 
     /* @ngInject */
     function FlickrService($http) {
-        this.getImagesBySearch = getImagesBySearch;
+        this.getImages = getImages;
 
         ////////////////
 
-        function getImagesBySearch(searchTerm, page) {
+        function getImages(searchTerm, page) {
             return $http({
                 method: 'GET',
                 url: 'https://api.flickr.com/services/rest',
