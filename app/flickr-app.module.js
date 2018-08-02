@@ -8,5 +8,6 @@
      */
     angular
         .module('flickr-app', [
+            'infinite-scroll'
         ]);
 })();

@@ -9,18 +9,35 @@
                 var _this = this;
                 _this.searchInput = 'cars';
                 _this.getImagesBySearch = getImagesBySearch;
+                _this.nextPage = nextPage;
+                _this.photos = [];
+                _this.page = 1;
+                _this.busy = false;
 
                 this.$onInit = function () {
                     getImagesBySearch();
                 };
 
                 function getImagesBySearch() {
-                    return FlickrService.getImagesBySearch(_this.searchInput)
+                    if (_this.busy) {
+                        return;
+                    }
+                    _this.busy = true;
+
+                    return FlickrService.getImagesBySearch(_this.searchInput, _this.page)
                         .then(function (response) {
-                            _this.photos = response.data.photos.photo;
+                            _this.page++;
+                            response.data.photos.photo.map(function (item) {
+                                _this.photos.push(item);
+                            });
+                            _this.busy = false;
                         }).catch(function(error) {
                             console.log(error);
                         });
+                }
+
+                function nextPage() {
+                    getImagesBySearch();
                 }
             }
         });

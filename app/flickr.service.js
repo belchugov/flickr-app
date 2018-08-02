@@ -13,7 +13,7 @@
 
         ////////////////
 
-        function getImagesBySearch(searchTerm) {
+        function getImagesBySearch(searchTerm, page) {
             return $http({
                 method: 'GET',
                 url: 'https://api.flickr.com/services/rest',
@@ -24,7 +24,8 @@
                     format: 'json',
                     nojsoncallback: 1,
                     safe_search: 3,
-                    per_page: '12'
+                    per_page: '12',
+                    page: page
                 }
             }).then(function (response) {
                 return response;
