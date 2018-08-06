@@ -4,7 +4,7 @@
     angular
         .module('flickr-app')
         .component('imageList', {
-            templateUrl: './app/image-list.html',
+            templateUrl: 'app/image-list.html',
             controller: function ImageListController(FlickrService) {
                 var _this = this;
                 _this.searchInput = 'cars';

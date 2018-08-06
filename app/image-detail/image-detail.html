@@ -1,0 +1,21 @@
+<button type="button"
+        ng-click="$ctrl.moreInfo(photo)"
+        class="btn btn-primary">
+    Show details
+</button>
+<!--<pre>{{ $ctrl.photoDetail | json}}</pre>-->
+<div ng-if="$ctrl.photoDetail">
+    <p>
+        By <a href="https://www.flickr.com/people/{{ $ctrl.photo.owner }}">
+        {{ $ctrl.photoDetail.owner.username }}</a>
+    </p>
+    <p>
+        Description: {{ $ctrl.photoDetail.description._content }}
+    </p>
+    <p>
+        Tags:
+        <span ng-repeat="tag in $ctrl.photoDetail.tags.tag">
+            <a href="https://www.flickr.com/photos/tags/{{ tag._content }}" class="badge badge-primary">{{ tag.raw }}</a>
+        </span>
+    </p>
+</div>
