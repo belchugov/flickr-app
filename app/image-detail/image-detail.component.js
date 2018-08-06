@@ -14,7 +14,6 @@
 
                 function moreInfo(photo) {
                     return FlickrService.getImageDetail(_this.photo).then(function (response) {
-                        console.log('response: ', response.data.photo);
                         _this.photoDetail = response.data.photo;
                     }).catch(function (error) {
                         console.log(error);
