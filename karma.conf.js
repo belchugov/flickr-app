@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'node_modules/angular/angular.min.js', watched: false },
-      { pattern: 'node_modules/ng-infinite-scroll/build/ng-infinite-scroll.min.js', watched: false },
+      { pattern: 'lib/angular.js', watched: false },
+      { pattern: 'lib/*.js', watched: false },
       'app/**/*.js'
     ],
 
