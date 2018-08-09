@@ -1,6 +1,14 @@
 (function () {
     'use strict';
 
+    /**
+     * @ngdoc service
+     * @module flickr-app
+     * @name FlickrService
+     *
+     * @description
+     * Service for geting images buy search and getting image details from flickr
+     */
     angular
         .module('flickr-app')
         .service('FlickrService', FlickrService);
@@ -14,6 +22,17 @@
 
         ////////////////
 
+        /**
+         * @ngdoc method
+         * @module flickr-app
+         * @name FlickrService#getImages
+         * @description
+         * Gets the image list from flickr API buy search term
+         *
+         * @param {string} searchTerm
+         * @param {number} page
+         * @returns {Promise} A promise that returns a json object if resolved or Error if rejected
+         */
         function getImages(searchTerm, page) {
             return $http({
                 method: 'GET',
@@ -35,6 +54,16 @@
             });
         }
 
+        /**
+         * @ngdoc method
+         * @module flickr-app
+         * @name FlickrService#getImageDetail
+         * @description
+         * Gets the image details from flickr API
+         *
+         * @param {object} image
+         * @returns {Promise} A promise that returns a json object if resolved or Error if rejected
+         */
         function getImageDetail(image) {
             return $http({
                 method: 'GET',
