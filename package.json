@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server",
-    "test": "karma start",
-    "update-webdriver": "webdriver-manager update",
-    "pree2e": "npm run update-webdriver",
-    "e2e": "protractor e2e-tests/protractor.conf.js"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -31,7 +28,6 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "^1.1.2",
-    "live-server": "^1.2.0",
-    "protractor": "^5.4.0"
+    "live-server": "^1.2.0"
   }
 }
