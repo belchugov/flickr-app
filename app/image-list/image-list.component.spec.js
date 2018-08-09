@@ -1,3 +1,5 @@
+'use strict';
+
 describe('imageList component', function () {
 
     describe('$onInit()', function () {
