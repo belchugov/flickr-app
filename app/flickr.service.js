@@ -6,6 +6,7 @@
      * @module flickr-app
      * @name FlickrService
      *
+     * @param $http
      * @description
      * Service for geting images buy search and getting image details from flickr
      */

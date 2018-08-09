@@ -1,14 +1,29 @@
 (function() {
     'use strict';
 
+    /**
+     * @ngdoc component
+     * @module flickr-app
+     * @name imageList
+     *
+     * @description Component for listing images
+     */
     angular
         .module('flickr-app')
         .component('imageList', {
             templateUrl: 'app/image-list/image-list.html',
-            controller: ImageList
+            controller: ImageListController
         });
 
-    function ImageList(FlickrService) {
+    /**
+     * @ngdoc controller
+     * @module flickr-app
+     * @name ImageListController
+     *
+     * @param FlickrService
+     * @description Controller for imageList component
+     */
+    function ImageListController(FlickrService) {
         this.FlickrService = FlickrService;
         var _this = this;
         _this.searchInput = 'cars';
